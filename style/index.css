@@ -1,0 +1,148 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border-radius: 2px;
+  background-color: #5cb85f;
+  padding: 8px 12px;
+  color: #fff;
+  border: none;
+}
+
+a {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+button:hover {
+  background-color: #449d44;
+}
+
+#hero {
+  height: 500px;
+  background-color: #f1f3ff;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  margin: 24px 10vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+  justify-self: end;
+  list-style: none;
+}
+
+.nav-item a {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#nav-logo {
+  width: 100px;
+  height: 34px;
+  background: #0d28a6;
+}
+
+#hero .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+}
+
+#hero__text {
+  padding-left: 10vw;
+}
+
+#hero__text h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  margin-bottom: 16px;
+}
+
+#hero__text h2 {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 16px;
+}
+
+#hero__bg {
+  align-self: end;
+  justify-self: end;
+  user-select: none;
+}
+
+#service {
+  height: 600px;
+  width: 70vw;
+  margin: 0 15vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+#service .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+}
+
+#service .content h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+#service .content h2 {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#service .content ul {
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: 16px;
+  padding: 0;
+}
+
+#service ul li {
+  list-style: none;
+  background-image: url("/img/service_list_bullet.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 24px;
+  height: 24px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 0 0 40px;
+  display: flex;
+  align-items: center;
+}
