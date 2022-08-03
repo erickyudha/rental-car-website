@@ -13,9 +13,8 @@ button {
   border: none;
 }
 
-a {
-  text-decoration: none !important;
-  color: #000 !important;
+.nav-link {
+  color: #000;
 }
 
 button:hover {
@@ -32,7 +31,7 @@ button:hover {
   top: 0;
   left: 0;
   width: 80vw;
-  margin: 24px 10vw;
+  margin: 16px 10vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -72,7 +71,6 @@ button:hover {
 }
 
 #hero__text h1 {
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 150%;
@@ -80,7 +78,6 @@ button:hover {
 }
 
 #hero__text h2 {
-  font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -111,14 +108,12 @@ button:hover {
 }
 
 #service .content h1 {
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
 }
 
 #service .content h2 {
-  font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -138,11 +133,54 @@ button:hover {
   background-position: left center;
   background-size: 24px;
   height: 24px;
-  font-style: normal;
+
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
   padding: 0 0 0 40px;
   display: flex;
   align-items: center;
+}
+
+#why-us {
+  height: 450px;
+  width: 80vw;
+  margin: 0 10vw;
+}
+
+#why-us h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+#why-us h2 {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 50px;
+}
+
+#why-us .card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 50px;
+}
+
+#why-us .card-list .card {
+  border-radius: 8px;
+}
+
+#why-us .card-list .card img {
+  width: 32px;
+  margin: 16px 14px 2px;
+}
+
+#why-us .card-list .card .card-body .card-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
 }
