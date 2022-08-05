@@ -14,20 +14,20 @@
   </head>
   <body>
     <div id="hero">
-      <nav class="nav">
+      <nav id="nav-marker"  class="nav">
         <div id="nav-logo"></div>
         <ul class="nav-items">
           <li class="nav-item">
-            <a class="nav-link" href="#service">Services</a>
+            <a class="nav-link" data-target="service">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#why-us">Why Us</a>
+            <a class="nav-link" data-target="why-us">Why Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Testimonial</a>
+            <a class="nav-link" data-target="testimonial">Testimonial</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">FAQ</a>
+            <a class="nav-link" data-target="faq">FAQ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
@@ -283,20 +283,19 @@
   ></script>
 
   <script>
-    let slides = document.querySelectorAll(".carousel-item");
-    slides.forEach((el) => {
-      // number of slides per carousel-item
-      const minPerSlide = slides.length;
-      let next = el.nextElementSibling;
-      for (var i = 1; i < minPerSlide; i++) {
-        if (!next) {
-          // wrap carousel by using first child
-          next = slides[0];
-        }
-        let cloneChild = next.cloneNode(true);
-        el.appendChild(cloneChild.children[0]);
-        next = next.nextElementSibling;
-      }
-    });
+    // Scroll dengan penyesuaian tinggi navbar
+    let navElements = document.getElementById("nav-marker").children[1].children;
+    for (key in navElements) {
+      console.log(key);
+      navElements[key].addEventListener("click", function (ev) {
+        var element = ev.target || ev.srcElement;
+        var targetSection = element.getAttribute("data-target");
+
+        window.scrollTo(
+          0,
+          document.getElementById(targetSection).offsetTop - 80
+        );
+      });
+    }
   </script>
 </html>

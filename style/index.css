@@ -31,7 +31,7 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   background-color: #f1f3ff;
-  z-index: 1;
+  z-index: 99;
 }
 
 .nav-items {
