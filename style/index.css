@@ -3,6 +3,11 @@
   font-size: 14px;
   margin: 0;
   padding: 0;
+  color: #000;
+}
+
+a {
+  cursor: pointer;
 }
 
 .btn-success {
@@ -49,7 +54,7 @@
   padding-right: 0;
 }
 
-#nav-logo {
+.nav-logo {
   width: 100px;
   height: 34px;
   background: #0d28a6;
@@ -186,6 +191,107 @@
   line-height: 24px;
 }
 
+#testimony {
+  min-height: 400px;
+  height: fit-content;
+  width: 100%;
+  margin: 0 0 80px;
+}
+
+#testimony h1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height, or 150% */
+
+  text-align: center;
+}
+
+#testimony h2 {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  text-align: center;
+}
+
+.card-slide {
+  width: 620px;
+  min-height: 270px;
+  height: fit-content;
+  background: #f1f3ff;
+  /* Shadow/Low */
+
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 70px 32px;
+  margin: 30px 20px;
+
+  display: grid!important;
+  grid-template-columns: 120px auto;
+  grid-template-rows: auto;
+  align-items: center;
+  grid-template-areas:
+    ". star-rating"
+    "profile-pic testimonial-quote"
+    "profile-pic profile-name";
+}
+
+.card-slide img {
+  grid-area: profile-pic;
+  align-self: start;
+}
+
+.card-slide .rating-container {
+  grid-area: star-rating;
+  align-self: end;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.card-slide p {
+  line-height: 20px;
+  color: #000000;
+  grid-area: testimonial-quote;
+}
+
+#testimony .card-slide h1 {
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  text-align: left;
+
+  grid-area: profile-name;
+}
+
+.control-c {
+  cursor: pointer;
+  margin: 5px 12px;
+}
+
+.slick-carousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: fit-content fit-content;
+  grid-template-areas: 
+  "carousel carousel"
+  "prev-btn next-btn";
+}
+.slick-list {
+  grid-area: carousel;
+}
+.a-left {
+  grid-area: prev-btn;
+  justify-self: end;
+}
+.a-right {
+  grid-area: next-btn;
+  justify-self: start;
+}
+
 #getting-started {
   min-height: 350px;
   height: fit-content;
@@ -257,8 +363,40 @@
 
 .accordion-button {
   border: solid 1px #d4d4d4;
-  border-radius: 4px!important;
+  border-radius: 4px !important;
   line-height: 20px;
   color: #000;
   padding: 18px 24px;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 2fr;
+  gap: 80px;
+  padding: 0;
+  margin: 50px 10vw 80px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  margin-bottom: 16px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+footer .navigation li {
+  margin-bottom: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+footer .navigation li:hover {
+  color: #0d28a6;
+}
+
+footer .connect-icons {
+  display: flex;
+  gap: 16px;
 }
