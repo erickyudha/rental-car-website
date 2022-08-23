@@ -449,9 +449,13 @@ footer {
     grid-template-columns: 1fr;
     margin-top: 60px;
     justify-items: center;
+    text-align: center;
   }
 
+  /* FOOTER */
   footer {
     grid-template-columns: 1fr;
+    margin-top: 60px;
+    gap: 16px;
   }
 }
