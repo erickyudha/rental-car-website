@@ -19,16 +19,36 @@
     <link rel="stylesheet" href="/style/index.css" />
   </head>
   <body>
-    <nav class="nav global-container bg-grey">
+    <!-- NAV SECTION -->
+    <nav class="global-container bg-grey">
       <div class="logo"></div>
-      <ul id="nav-marker" class="flex-row flex-gap-32 grid-end no-mp">
+      <ul id="nav-marker" class="flex-row flex-gap-32 grid-end no-mp nav-list">
         <li><a class="link" data-target="services">Services</a></li>
         <li><a class="link" data-target="why-us">Why Us</a></li>
         <li><a class="link" data-target="testimonial">Testimonial</a></li>
         <li><a class="link" data-target="faq">FAQ</a></li>
         <li><button class="btn btn-success">Register</button></li>
       </ul>
+      <button class="menu-toggle">
+        <img src="/img/icon-burger.svg" width="24" height="24" alt="" />
+      </button>
     </nav>
+    <div id="sidebar" class="flex-column flex-gap-16">
+      <div class="flex-row">
+        <span class="body-bold">BCR</span>
+        <button class="menu-exit-toggle">
+          <img src="/img/icon_x.svg" width="24" height="24" alt="" />
+        </button>
+      </div>
+      <ul id="sidebar-marker" class="flex-column flex-gap-16 grid-end no-mp">
+        <li><a class="link" data-target="services">Services</a></li>
+        <li><a class="link" data-target="why-us">Why Us</a></li>
+        <li><a class="link" data-target="testimonial">Testimonial</a></li>
+        <li><a class="link" data-target="faq">FAQ</a></li>
+        <li><button class="btn btn-success">Register</button></li>
+      </ul>
+    </div>
+    <span class="nav-overlay"></span>
 
     <!-- HERO SECTION -->
     <div id="hero" class="container-fluid bg-grey no-mp">
@@ -406,6 +426,12 @@
     ></script>
 
     <script>
+      // Nav Button Event
+      let navToggleBtn = document.getElementById();
+      let overlayLayer = document.getElementById();
+      let sidebarElement = document.getElementById();
+      let exitSidebarBtn = document.getElementById();
+
       // Carousel init
       $(document).ready(function () {
         $(".testimonial-carousel").slick({
@@ -422,10 +448,15 @@
       });
 
       // Scroll dengan penyesuaian tinggi navbar
+      let sidebarElements = document.getElementById("sidebar-marker").children;
       let topNavElements = document.getElementById("nav-marker").children;
       let footerNavElements =
         document.getElementById("footer-nav-marker").children;
-      let navElements = [...topNavElements, ...footerNavElements];
+      let navElements = [
+        ...topNavElements,
+        ...footerNavElements,
+        ...sidebarElements,
+      ];
 
       for (key in navElements) {
         navElements[key].addEventListener("click", function (ev) {
