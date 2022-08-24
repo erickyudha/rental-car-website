@@ -139,6 +139,7 @@ nav {
   position: fixed;
   display: flex;
   justify-content: space-between;
+  z-index: 99;
 }
 
 .menu-toggle {
@@ -332,6 +333,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 
 .accordion-item {
@@ -375,6 +377,13 @@ footer {
 
   .menu-toggle {
     display: block;
+    border: none;
+    background-color: transparent;
+  }
+
+  .menu-exit-toggle {
+    border: none;
+    background-color: transparent;
   }
 
   #sidebar {
