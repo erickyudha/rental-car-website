@@ -38,7 +38,7 @@ navToggleBtn.addEventListener("click", () => {
     const timer = setInterval(inAnimation, 5);
 })
 
-exitSidebarBtn.addEventListener("click", () => {
+const closeSidebar = () => {
     // Animate the element
     let sidebarPos = 0;
     let overlayOpacity = 100;
@@ -57,7 +57,12 @@ exitSidebarBtn.addEventListener("click", () => {
         }
     }
     const timer = setInterval(outAnimation, 5);
-})
+}
+
+exitSidebarBtn.addEventListener("click", closeSidebar);
+
+// -- close sidebar when overlay clicked
+overlayLayer.addEventListener("click", closeSidebar);
 
 // -- reset when viewport resized
 window.onresize = () => {
