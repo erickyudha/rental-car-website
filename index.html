@@ -29,14 +29,30 @@
         <li><a class="link" data-target="faq">FAQ</a></li>
         <li><button class="btn btn-success">Register</button></li>
       </ul>
-      <button id="sidebar-toggle" class="menu-toggle">
+      <button
+        id="sidebar-toggle"
+        class="menu-toggle"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
         <img src="/img/icon-burger.svg" width="24" height="24" alt="" />
       </button>
     </nav>
-    <div id="sidebar" class="flex-column flex-gap-16">
+    <div
+      id="offcanvasRight"
+      class="flex-column flex-gap-16 offcanvas offcanvas-end"
+      tabindex="-1"
+      aria-labelledby="offcanvasRightLabel"
+    >
       <div class="flex-row">
         <span class="body-bold">BCR</span>
-        <button id="sidebar-exit" class="menu-exit-toggle no-mp">
+        <button
+          id="sidebar-exit"
+          class="menu-exit-toggle no-mp"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
           <img src="/img/icon_x.svg" width="24" height="24" alt="" />
         </button>
       </div>
@@ -48,7 +64,6 @@
         <li><button class="btn btn-success">Register</button></li>
       </ul>
     </div>
-    <span id="nav-overlay"></span>
 
     <!-- HERO SECTION -->
     <section id="hero" class="container-fluid bg-grey no-mp">

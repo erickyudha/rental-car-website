@@ -142,11 +142,24 @@ nav {
   z-index: 99;
 }
 
-.menu-toggle {
+#sidebar-toggle {
   display: none;
 }
 
-#sidebar {
+.menu-toggle {
+  border: none;
+  background-color: transparent;
+}
+
+.menu-exit-toggle {
+  border: none;
+  background-color: transparent;
+}
+
+#offcanvasRight {
+  display: none;
+}
+.offcanvas-backdrop {
   display: none;
 }
 
@@ -375,41 +388,26 @@ footer {
     display: none;
   }
 
-  .menu-toggle {
+  #sidebar-toggle {
     display: block;
-    border: none;
-    background-color: transparent;
   }
 
-  .menu-exit-toggle {
-    border: none;
-    background-color: transparent;
-  }
-
-  #sidebar {
+  #offcanvasRight {
     display: flex;
     position: fixed;
     top: 0;
     right: 0;
     width: 50vw;
     height: 100vh;
-    z-index: 101;
     background-color: #fff;
     padding: 30px 16px;
   }
 
-  #sidebar > div {
+  #offcanvasRight > div {
     justify-content: space-between;
   }
-
-  #nav-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
+  .offcanvas-backdrop {
+    display: block;
   }
 
   /* HERO */
