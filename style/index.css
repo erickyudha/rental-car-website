@@ -370,7 +370,7 @@ footer {
   gap: 80px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 576px) {
   .global-container {
     padding: 10px 16px;
   }
