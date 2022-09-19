@@ -1,0 +1,70 @@
+#car-form {
+  background-color: #fff;
+  margin: -40px 15vw 100px 15vw;
+  padding: 24px;
+  width: 70vw;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  z-index: 2;
+
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 92px;
+  grid-gap: 16px;
+}
+
+#car-form > .btn-success {
+  align-self: flex-end;
+  height: 36px;
+  padding: 8px 12px;
+  font-size: 14px;
+  flex-basis: 68px;
+}
+
+.select-input {
+  width: 100%;
+}
+
+.select-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  gap: 8px;
+
+  width: 100%;
+  height: 36px;
+
+  border: 1px solid #3c3c3c;
+  border-radius: 2px;
+  background-color: #fff;
+
+  cursor: pointer;
+}
+.select-btn:focus {
+  border-color: #5cb85f;
+}
+
+.select-dropdown {
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 0;
+  margin: 4px 0;
+}
+
+.select-dropdown > li {
+  min-height: 38px;
+  line-height: 18px;
+  padding: 10px 12px;
+}
+.select-dropdown > li:hover {
+  background: #c9e7ca;
+  color: #5cb85f;
+  font-style: bold;
+}

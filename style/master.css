@@ -187,6 +187,7 @@ nav {
   justify-self: end;
   width: 50vw;
   height: auto;
+  z-index: 1;
 }
 
 /* FOOTER */
