@@ -56,12 +56,20 @@
   border-radius: 2px;
   padding: 0;
   margin: 4px 0;
+  opacity: 0;
+  transition: 0.1s ease-out;
 }
-
+.select-dropdown.active {
+  opacity: 1;
+  transition: 0.1s ease-in;
+}
 .select-dropdown > li {
   min-height: 38px;
   line-height: 18px;
   padding: 10px 12px;
+}
+.select-dropdown > li > input {
+  display: none;
 }
 .select-dropdown > li:hover {
   background: #c9e7ca;
