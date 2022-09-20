@@ -40,11 +40,18 @@ dateRange.daterangepicker({
 
 const dateInputBox = document.querySelector(".date-input .input-container");
 
+
 dateRange.on("show.daterangepicker", () => {
+    const formOverlay = document.querySelector(".overlay")
+
     dateInputBox.classList.toggle("active");
+    formOverlay.classList.toggle("active");
 })
 dateRange.on("hide.daterangepicker", () => {
+    const formOverlay = document.querySelector(".overlay")
+
     dateInputBox.classList.toggle("active");
+    formOverlay.classList.toggle("active");
 })
 
 dateRange.on('apply.daterangepicker', function (ev, picker) {

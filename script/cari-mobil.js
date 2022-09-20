@@ -2,6 +2,7 @@ const selectInputArr = document.getElementsByClassName("select-input");
 const selectBtnArr = document.getElementsByClassName("select-btn")
 const selectDropArr = document.getElementsByClassName("select-dropdown");
 const textInputArr = document.getElementsByClassName("text-input");
+const formOverlay = document.querySelector(".overlay")
 
 const changeWidthBatch = (elementArr, targetWidth) => {
     for (let element of elementArr) {
@@ -27,6 +28,7 @@ const dropdownViewEvent = () => {
         selectBtnArr[i].addEventListener("click", () => {
             dropdown.classList.toggle("active");
             arrowImg.classList.toggle("active");
+            formOverlay.classList.toggle("active");
             rotateImg()
         })
 
@@ -34,6 +36,7 @@ const dropdownViewEvent = () => {
             setTimeout(() => {
                 dropdown.classList.remove("active");
                 arrowImg.classList.remove("active");
+                formOverlay.classList.remove("active");
             }, 120);
         })
     }
@@ -52,6 +55,7 @@ const dropdownClickEvent = () => {
                 input.checked = true;
 
                 selectDropArr[i].classList.remove("active");
+                formOverlay.classList.remove("active");
             })
         }
     }
@@ -72,10 +76,12 @@ const textInputActiveEvent = () => {
 
         inputBox.addEventListener("click", () => {
             inputContainer.classList.toggle("active")
+            formOverlay.classList.toggle("active");
         })
         inputBox.addEventListener("focusout", () => {
             setTimeout(() => {
                 inputContainer.classList.remove("active");
+                formOverlay.classList.remove("active");
             }, 120);
         })
     }
