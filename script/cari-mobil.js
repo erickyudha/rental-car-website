@@ -25,13 +25,8 @@ const dropdownViewEvent = () => {
         }
 
         selectBtnArr[i].addEventListener("click", () => {
-            if (dropdown.classList.contains("active")) {
-                dropdown.classList.remove("active");
-                arrowImg.classList.remove("active");
-            } else {
-                dropdown.classList.add("active");
-                arrowImg.classList.add("active");
-            }
+            dropdown.classList.toggle("active");
+            arrowImg.classList.toggle("active");
             rotateImg()
         })
 
@@ -76,11 +71,7 @@ const textInputActiveEvent = () => {
         const inputBox = inputContainer.children[0];
 
         inputBox.addEventListener("click", () => {
-            if (inputContainer.classList.contains("active")) {
-                inputContainer.classList.remove("active")
-            } else {
-                inputContainer.classList.add("active")
-            }
+            inputContainer.classList.toggle("active")
         })
         inputBox.addEventListener("focusout", () => {
             setTimeout(() => {
