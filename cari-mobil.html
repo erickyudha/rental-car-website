@@ -87,7 +87,7 @@
     <form id="car-form">
       <div class="select-input">
         <label for="">Tipe Driver</label>
-        <button type="button" class="select-btn">
+        <button type="button" class="select-btn input-container">
           <span>Pilih Tipe Driver</span>
           <img src="/img/form-arrow-down.svg" alt="" height="18" width="18" />
         </button>
@@ -111,6 +111,53 @@
             <label for="noDriver">Tanpa Sopir (Lepas Kunci)</label>
           </li>
         </ul>
+      </div>
+
+      <div class="select-input">
+        <label for="">Waktu Jemput/Ambil</label>
+        <button type="button" class="select-btn input-container">
+          <span>Pilih Waktu</span>
+          <img src="/img/form-arrow-down.svg" alt="" height="18" width="18" />
+        </button>
+        <ul class="select-dropdown pickup-time-list">
+          <li>
+            <input type="radio" name="pickupTime" value="08.00" />
+            <label>08.00</label>
+            <span>WIB</span>
+          </li>
+          <li>
+            <input type="radio" name="pickupTime" value="09.00" />
+            <label>09.00</label>
+            <span>WIB</span>
+          </li>
+          <li>
+            <input type="radio" name="pickupTime" value="10.00" />
+            <label>10.00</label>
+            <span>WIB</span>
+          </li>
+          <li>
+            <input type="radio" name="pickupTime" value="11.00" />
+            <label>11.00</label>
+            <span>WIB</span>
+          </li>
+          <li>
+            <input type="radio" name="pickupTime" value="12.00" />
+            <label>12.00</label>
+            <span>WIB</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="text-input">
+        <label for="">Jumlah Penumpang (optional)</label>
+        <div class="input-container">
+          <input
+            name="peopleAmount"
+            type="text"
+            placeholder="Jumlah Penumpang"
+          />
+          <img src="/img/icon_people.svg" alt="" height="18" width="18" />
+        </div>
       </div>
 
       <button class="btn btn-success">Cari Mobil</button>
