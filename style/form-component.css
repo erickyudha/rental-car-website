@@ -47,10 +47,10 @@
   margin: 4px 0;
   opacity: 0;
   transition: 0.1s ease-out;
-  display: none;
+  visibility: hidden;
 }
 .select-dropdown.active {
-  display: block;
+  visibility: visible;
   opacity: 1;
   transition: 0.1s ease-in;
 }

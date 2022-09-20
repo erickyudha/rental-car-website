@@ -42,19 +42,14 @@ const dateInputBox = document.querySelector(".date-input .input-container");
 
 
 dateRange.on("show.daterangepicker", () => {
-    const formOverlay = document.querySelector(".overlay")
-
     dateInputBox.classList.toggle("active");
-    formOverlay.classList.toggle("active");
+    checkAndToggleOverlay(dateInputBox.classList.contains("active"))
 })
 dateRange.on("hide.daterangepicker", () => {
-    const formOverlay = document.querySelector(".overlay")
-
-    dateInputBox.classList.toggle("active");
-    formOverlay.classList.toggle("active");
+    dateInputBox.classList.remove("active");
+    checkAndToggleOverlay(false)
 })
 
 dateRange.on('apply.daterangepicker', function (ev, picker) {
     dateRange.val(picker.startDate.format('DD-MM-YYYY'));
 });
-
