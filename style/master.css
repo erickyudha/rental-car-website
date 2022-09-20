@@ -29,6 +29,9 @@ body {
   overflow-x: hidden;
 }
 
+.hidden {
+  display: none;
+}
 .link {
   color: #000;
   text-decoration: none;
