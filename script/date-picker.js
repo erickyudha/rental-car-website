@@ -38,6 +38,15 @@ dateRange.daterangepicker({
     }
 });
 
+const dateInputBox = document.querySelector(".date-input .input-container");
+
+dateRange.on("show.daterangepicker", () => {
+    dateInputBox.classList.toggle("active");
+})
+dateRange.on("hide.daterangepicker", () => {
+    dateInputBox.classList.toggle("active");
+})
+
 dateRange.on('apply.daterangepicker', function (ev, picker) {
     dateRange.val(picker.startDate.format('DD-MM-YYYY'));
 });
