@@ -110,6 +110,9 @@ h2 {
   justify-items: center;
 }
 
+.flex-gap-8 {
+  gap: 8px;
+}
 .flex-gap-16 {
   gap: 16px;
 }
@@ -134,7 +137,7 @@ h2 {
 }
 
 .overlay {
-  display: hidden;
+  visibility: hidden;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -148,7 +151,7 @@ h2 {
   transition: 0.2s ease-out;
 }
 .overlay.active {
-  display: block;
+  visibility: visible;
   opacity: 0.6;
   transition: 0.2s ease-in;
 }

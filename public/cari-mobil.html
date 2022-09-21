@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BCR - Binar Car Central</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <link rel="stylesheet" href="/lib/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="/style/master.css" />
+    <link rel="stylesheet" href="/style/form-component.css" />
+    <link rel="stylesheet" href="/style/cari-mobil.css  " />
+  </head>
+  <body>
+    <!-- NAV SECTION -->
+    <nav class="global-container bg-grey">
+      <span class="logo"></span>
+      <ul id="nav-marker" class="flex-row flex-gap-32 grid-end no-mp nav-list">
+        <li><a class="link" data-target="services">Services</a></li>
+        <li><a class="link" data-target="why-us">Why Us</a></li>
+        <li><a class="link" data-target="testimonial">Testimonial</a></li>
+        <li><a class="link" data-target="faq">FAQ</a></li>
+        <li><button class="btn btn-success">Register</button></li>
+      </ul>
+      <button
+        id="sidebar-toggle"
+        class="menu-toggle"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
+        <img src="/img/icon-burger.svg" width="24" height="24" alt="" />
+      </button>
+    </nav>
+    <!-- OFFCANVAS NAVIGATION FOR MOBILE -->
+    <div
+      id="offcanvasRight"
+      class="flex-column flex-gap-16 offcanvas offcanvas-end"
+      tabindex="-1"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="flex-row">
+        <span class="body-bold">BCR</span>
+        <button
+          id="sidebar-exit"
+          class="menu-exit-toggle no-mp"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <img src="/img/icon_x.svg" width="24" height="24" alt="" />
+        </button>
+      </div>
+      <ul id="sidebar-marker" class="flex-column flex-gap-16 grid-end no-mp">
+        <li><a class="link" data-target="services">Services</a></li>
+        <li><a class="link" data-target="why-us">Why Us</a></li>
+        <li><a class="link" data-target="testimonial">Testimonial</a></li>
+        <li><a class="link" data-target="faq">FAQ</a></li>
+        <li><button class="btn btn-success">Register</button></li>
+      </ul>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="container-fluid bg-grey no-mp">
+      <div id="hero__text" class="flex-column flex-gap-16">
+        <h1 class="no-mp">Sewa &amp; Rental Mobil Terbaik di kawasan Bogor</h1>
+        <p class="no-mp">
+          Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas
+          terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
+          untuk sewa mobil selama 24 jam.
+        </p>
+      </div>
+      <img draggable="false" src="/img/img_car.png" alt="" />
+    </section>
+
+    <!-- INPUT OVERLAY -->
+    <span class="overlay"></span>
+
+    <!-- SEARCH SECTION -->
+    <section id="search">
+      <!-- INPUT SECTION -->
+      <form id="car-form">
+        <div class="select-input">
+          <label for="">Tipe Driver</label>
+          <button type="button" class="select-btn input-container">
+            <span>Pilih Tipe Driver</span>
+            <img src="/img/form-arrow-down.svg" alt="" height="18" width="18" />
+          </button>
+          <ul class="select-dropdown">
+            <li>
+              <input
+                type="radio"
+                name="driverType"
+                id="withDriver"
+                value="withDriver"
+              />
+              <label for="withDriver">Dengan Sopir</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="driverType"
+                id="noDriver"
+                value="noDriver"
+              />
+              <label for="noDriver">Tanpa Sopir (Lepas Kunci)</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="date-input">
+          <label for="pickupDate">Tanggal</label>
+          <div class="input-container">
+            <input
+              type="text"
+              name="pickupDate"
+              value=""
+              placeholder="Pilih Tanggal"
+            />
+            <img src="/img/icon_calendar.svg" alt="" height="18" width="18" />
+          </div>
+        </div>
+
+        <div class="select-input">
+          <label for="">Waktu Jemput/Ambil</label>
+          <button type="button" class="select-btn input-container">
+            <span>Pilih Waktu</span>
+            <img src="/img/form-arrow-down.svg" alt="" height="18" width="18" />
+          </button>
+          <ul class="select-dropdown pickup-time-list">
+            <li>
+              <input type="radio" name="pickupTime" value="08.00" />
+              <label>08.00</label>
+              <span>WIB</span>
+            </li>
+            <li>
+              <input type="radio" name="pickupTime" value="09.00" />
+              <label>09.00</label>
+              <span>WIB</span>
+            </li>
+            <li>
+              <input type="radio" name="pickupTime" value="10.00" />
+              <label>10.00</label>
+              <span>WIB</span>
+            </li>
+            <li>
+              <input type="radio" name="pickupTime" value="11.00" />
+              <label>11.00</label>
+              <span>WIB</span>
+            </li>
+            <li>
+              <input type="radio" name="pickupTime" value="12.00" />
+              <label>12.00</label>
+              <span>WIB</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-input">
+          <label for="">Jumlah Penumpang (optional)</label>
+          <div class="input-container">
+            <input
+              name="peopleAmount"
+              type="text"
+              placeholder="Jumlah Penumpang"
+            />
+            <img src="/img/icon_people.svg" alt="" height="18" width="18" />
+          </div>
+        </div>
+
+        <button class="btn btn-success">Cari Mobil</button>
+      </form>
+
+      <!-- RESULT SECTION -->
+      <div id="search-result" class="flex-row flex-gap-24">
+        <div class="result-card flex-column flex-gap-16">
+          <img src="/img/car-plain.png" alt="" />
+          <div class="result-car-text flex-column flex-gap-8">
+            <span>Nama/Tipe Mobil</span>
+            <span class="title">Rp 430.000 / hari</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="car-data flex-column flex-gap-16">
+              <div>
+                <img src="img/icon_people.svg" alt="" />
+                <span>4 orang</span>
+              </div>
+              <div>
+                <img src="img/icon_settings.svg" alt="" />
+                <span>Manual</span>
+              </div>
+              <div>
+                <img src="img/icon_calendar.svg" alt="" />
+                <span>Tahun 2020</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-success">Pilih Mobil</button>
+        </div>
+        <div class="result-card flex-column flex-gap-16">
+          <img src="/img/car-plain.png" alt="" />
+          <div class="result-car-text flex-column flex-gap-8">
+            <span>Nama/Tipe Mobil</span>
+            <span class="title">Rp 430.000 / hari</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="car-data flex-column flex-gap-16">
+              <div>
+                <img src="img/icon_people.svg" alt="" />
+                <span>4 orang</span>
+              </div>
+              <div>
+                <img src="img/icon_settings.svg" alt="" />
+                <span>Manual</span>
+              </div>
+              <div>
+                <img src="img/icon_calendar.svg" alt="" />
+                <span>Tahun 2020</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-success">Pilih Mobil</button>
+        </div>
+        <div class="result-card flex-column flex-gap-16">
+          <img src="/img/car-plain.png" alt="" />
+          <div class="result-car-text flex-column flex-gap-8">
+            <span>Nama/Tipe Mobil</span>
+            <span class="title">Rp 430.000 / hari</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="car-data flex-column flex-gap-16">
+              <div>
+                <img src="img/icon_people.svg" alt="" />
+                <span>4 orang</span>
+              </div>
+              <div>
+                <img src="img/icon_settings.svg" alt="" />
+                <span>Manual</span>
+              </div>
+              <div>
+                <img src="img/icon_calendar.svg" alt="" />
+                <span>Tahun 2020</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-success">Pilih Mobil</button>
+        </div>
+        <div class="result-card flex-column flex-gap-16">
+          <img src="/img/car-plain.png" alt="" />
+          <div class="result-car-text flex-column flex-gap-8">
+            <span>Nama/Tipe Mobil</span>
+            <span class="title">Rp 430.000 / hari</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="car-data flex-column flex-gap-16">
+              <div>
+                <img src="img/icon_people.svg" alt="" />
+                <span>4 orang</span>
+              </div>
+              <div>
+                <img src="img/icon_settings.svg" alt="" />
+                <span>Manual</span>
+              </div>
+              <div>
+                <img src="img/icon_calendar.svg" alt="" />
+                <span>Tahun 2020</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-success">Pilih Mobil</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="global-container">
+      <ul class="flex-column flex-gap-16 no-mp">
+        <li>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</li>
+        <li>binarcarrental@gmail.com</li>
+        <li>081-233-334-808</li>
+      </ul>
+      <ul id="footer-nav-marker" class="flex-column flex-gap-16 no-mp">
+        <li>
+          <a class="link body-bold" data-target="services">Our services</a>
+        </li>
+        <li><a class="link body-bold" data-target="why-us">Why Us</a></li>
+        <li>
+          <a class="link body-bold" data-target="testimonial">Testimonial</a>
+        </li>
+        <li><a class="link body-bold" data-target="faq">FAQ</a></li>
+      </ul>
+      <div class="flex-column flex-gap-16">
+        <p class="no-mp">Connect with us</p>
+        <div class="flex-row flex-gap-16">
+          <a href="https://www.facebook.com/">
+            <img draggable="false" src="/img/icon_facebook.png" alt="" />
+          </a>
+          <a href="https://www.instagram.com/">
+            <img draggable="false" src="/img/icon_instagram.png" alt="" />
+          </a>
+          <a href="https://www.twitter.com/">
+            <img draggable="false" src="/img/icon_twitter.png" alt="" />
+          </a>
+          <a href="https://www.gmail.com/">
+            <img draggable="false" src="/img/icon_mail.png" alt="" />
+          </a>
+          <a href="https://www.twitch.tv/">
+            <img draggable="false" src="/img/icon_twitch.png" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="flex-column flex-gap-16">
+        <p class="no-mp">Copyright Binar 2022</p>
+        <div class="logo"></div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script src="/lib/daterangepicker/moment.min.js"></script>
+    <script src="/lib/daterangepicker/daterangepicker.js"></script>
+
+    <script src="./script/form-component.js"></script>
+    <script src="./script/cari-mobil.js"></script>
+    <script src="./script/date-picker.js"></script>
+  </body>
+</html>

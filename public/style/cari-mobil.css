@@ -2,15 +2,21 @@ nav {
   position: absolute;
 }
 
+#search {
+  margin: -40px 15vw 100px 15vw;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
 #car-form {
   background-color: #fff;
-  margin: -40px 15vw 100px 15vw;
   padding: 24px;
-  width: 70vw;
+  height: fit-content;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  z-index: 2;
+  width: 70vw;
 
   font-weight: 300;
   font-size: 12px;
@@ -19,6 +25,7 @@ nav {
   grid-template-columns: 1fr 1fr 1fr 1fr 92px;
   grid-gap: 16px;
 
+  position: absolute;
   z-index: 11;
 }
 
@@ -35,8 +42,28 @@ nav {
   justify-content: space-between;
 }
 
+#search-result {
+  margin-top: 140px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.result-card {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  width: 333px;
+
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.car-data {
+  margin-bottom: 8px;
+}
+
 footer {
-  margin-top: 300px;
+  margin-top: 80x;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -46,8 +73,8 @@ footer {
     grid-template-rows: 1fr 1fr 1fr;
   }
 
-  footer {
-    margin-top: 350px;
+  #search-result {
+    margin-top: 255px;
   }
 }
 
@@ -57,7 +84,11 @@ footer {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   }
 
-  footer {
+  #search-result {
     margin-top: 400px;
+  }
+
+  .result-card {
+    width: 100%;
   }
 }
