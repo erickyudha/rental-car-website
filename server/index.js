@@ -4,12 +4,16 @@ const fs = require('fs');
 const path = require('path');
 
 const host = 'localhost';
-const port = 8000 || process.env;
+const port = process.env || 8000;
 
 const publicPath = "../public/";
 
+const routes = {
+    "/": "index.html",
+    "/cars": "cari-mobil.html"
+}
+
 // maps file extention to MIME types
-// full list can be found here: https://www.freeformatter.com/mime-types-list.html
 const mimeType = {
     '.ico': 'image/x-icon',
     '.html': 'text/html',
@@ -36,17 +40,7 @@ http.createServer(function (req, res) {
     let pathUrl = parsedUrl.pathname
 
     // ROUTERS
-    switch (pathUrl) {
-        case "/":
-            pathUrl = "/index.html"
-            break;
-        case "/cars":
-            pathUrl = "/cari-mobil.html"
-            break;
-
-        default:
-            break;
-    }
+    if (routes.hasOwnProperty(pathUrl)) pathUrl = routes[pathUrl]
 
     // extract URL path
     // Avoid https://en.wikipedia.org/wiki/Directory_traversal_attack
