@@ -4,6 +4,8 @@ const selectDropArr = document.getElementsByClassName("select-dropdown");
 const textInputArr = document.getElementsByClassName("text-input");
 const formOverlay = document.querySelector(".overlay")
 
+// OVERLAY FUNCTION
+
 const checkAndToggleOverlay = (checkCondition) => {
     if (checkCondition) {
         formOverlay.classList.add("active");
@@ -12,6 +14,9 @@ const checkAndToggleOverlay = (checkCondition) => {
     }
 
 }
+
+
+// SELECT DROPDOWN BUTTON FUNCTIONS
 
 const changeWidthBatch = (elementArr, targetWidth) => {
     for (let element of elementArr) {
@@ -22,6 +27,16 @@ const changeWidthBatch = (elementArr, targetWidth) => {
 const changeDropWidth = () => {
     const selectInputWidth = selectInputArr[0].offsetWidth;
     changeWidthBatch(selectDropArr, selectInputWidth);
+}
+
+const dropPlaceholderColorSetup = () => {
+    const dropButtonSpan = document.querySelectorAll(".select-btn span");
+    for (const span of dropButtonSpan) {
+        span.style.color = "#8A8A8A";
+        span.addEventListener('DOMSubtreeModified', () => {
+            span.style.color = "#000";
+        })
+    }
 }
 
 const dropdownViewEvent = () => {
@@ -65,6 +80,16 @@ const dropdownClickEvent = () => {
     }
 }
 
+const initDropSelectBtn = () => {
+    changeDropWidth();
+    dropdownViewEvent();
+    dropdownClickEvent();
+    dropPlaceholderColorSetup();
+}
+
+
+// CUSTOM TEXT INPUT COMPONENT FUNCTIONS
+
 const textInputActiveEvent = () => {
     for (let i = 0; i < textInputArr.length; i++) {
         const input = textInputArr[i];
@@ -82,4 +107,8 @@ const textInputActiveEvent = () => {
             }, 120);
         })
     }
+}
+
+const initTextInput = () => {
+    textInputActiveEvent();
 }
