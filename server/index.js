@@ -4,13 +4,14 @@ const fs = require('fs');
 const path = require('path');
 
 const host = 'localhost';
-const port = process.env || 8000;
+const port = 8000;
 
 const publicPath = "../public/";
 
 const routes = {
     "/": "index.html",
-    "/cars": "cari-mobil.html"
+    "/cars": "cari-mobil.html",
+    "/dev": "index.example.html"
 }
 
 // maps file extention to MIME types
