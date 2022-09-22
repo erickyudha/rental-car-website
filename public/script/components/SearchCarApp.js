@@ -14,6 +14,8 @@ class SearchCarApp {
         this.inputPeopleAmount = document.querySelector('input[name="peopleAmount"]'); // NO INPUT VALUE, .value == ""
 
         this.calendarApplyBtn = document.querySelector('.applyBtn');
+
+        this.readyToFilter = false;
     }
 
     async init() {
@@ -71,11 +73,8 @@ class SearchCarApp {
         let isValid = true;
 
         if (currentDriverType === null) isValid = false;
-        console.log("DriverType > " + currentDriverType);
         if (currentPickupTime === null) isValid = false;
-        console.log("PickupTime > " + currentPickupTime);
         if (this.inputPickupDate.value === "") isValid = false;
-        console.log("PickupDate > " + this.inputPickupDate.value);
 
         /* OPTIONAL CONDITION
         if (this.inputPeopleAmount.value == "") isValid = false
@@ -86,13 +85,15 @@ class SearchCarApp {
                 !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
         }
         if (this.inputPeopleAmount.value !== "" && !isNumeric(this.inputPeopleAmount.value)) isValid = false;
-        console.log("PeopleAmount > " + this.inputPeopleAmount.value);
-        return isValid
+
+        this.readyToFilter = isValid;
+        return isValid;
     }
 
 
-    run = () => {
+    run = async () => {
         this.clear();
+        await this.load();
 
         Car.list.forEach((car) => {
             const node = document.createElement("div");
@@ -102,9 +103,40 @@ class SearchCarApp {
     };
 
     async load() {
-        const cars = await Binar.listCars();
+        let cars;
+        if (this.readyToFilter) {
+            const filterCar = car => {
+                let isValid = true;
+
+                if (!car.available) isValid = false;
+                if (this.inputPeopleAmount != "" && this.inputPeopleAmount.value > car.capacity) isValid = false;
+
+                const timezone = "+0700"
+                const inputDate = this.inputPickupDate.value.split("-");
+                const inputDay = inputDate[0];
+                const inputMonth = inputDate[1];
+                const inputYear = inputDate[2];
+                const inputTime = document.querySelector(this.selectedPickupTimeSelector).value.replace(".", ":");
+
+                // ISO 8601 time format
+                const formattedInputTime = `${inputYear}-${inputMonth}-${inputDay}T${inputTime}:00${timezone}`
+
+                const carAvailableTime = new Date(car.availableAt)
+                const selectedDateTime = new Date(formattedInputTime);
+                /* console.log("----------------------");
+                console.log("available at: " + carAvailableTime);
+                console.log("need: " + selectedDateTime);
+                console.log("----------------------"); */
+
+                if (carAvailableTime > selectedDateTime) isValid = false;
+
+                return isValid
+            }
+            cars = await Binar.listCars(filterCar);
+        } else {
+            cars = await Binar.listCars();
+        }
         Car.init(cars);
-        console.log(cars);
     }
 
     clear = () => {
