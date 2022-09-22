@@ -44,8 +44,11 @@ nav {
 
 #search-result {
   margin-top: 140px;
+
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: flex-start;
 }
 
 .result-card {
@@ -56,6 +59,10 @@ nav {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   padding: 24px;
+}
+
+.result-card > img {
+  height: 200px;
 }
 
 .car-data {

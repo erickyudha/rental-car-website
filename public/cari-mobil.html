@@ -88,7 +88,7 @@
     <!-- SEARCH SECTION -->
     <section id="search">
       <!-- INPUT SECTION -->
-      <form id="car-form">
+      <div id="car-form">
         <div id="driver-type-input"></div>
 
         <div class="date-input">
@@ -120,38 +120,11 @@
           </div>
         </div>
 
-        <button class="btn btn-success">Cari Mobil</button>
-      </form>
+        <button id="search-car-btn" class="btn btn-success">Cari Mobil</button>
+      </div>
 
       <!-- RESULT SECTION -->
-      <div id="search-result" class="flex-row flex-gap-24">
-        <!-- <div class="result-card flex-column flex-gap-16">
-          <img src="/img/car-plain.png" alt="" />
-          <div class="result-car-text flex-column flex-gap-8">
-            <span>Nama/Tipe Mobil</span>
-            <span class="title">Rp 430.000 / hari</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <div class="car-data flex-column flex-gap-16">
-              <div>
-                <img src="img/icon_people.svg" alt="" />
-                <span>4 orang</span>
-              </div>
-              <div>
-                <img src="img/icon_settings.svg" alt="" />
-                <span>Manual</span>
-              </div>
-              <div>
-                <img src="img/icon_calendar.svg" alt="" />
-                <span>Tahun 2020</span>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-success">Pilih Mobil</button>
-        </div> -->
-      </div>
+      <div id="search-result" class="flex-row flex-gap-24"></div>
     </section>
 
     <!-- FOOTER -->
@@ -217,7 +190,7 @@
     <script src="./script/components/Component.js"></script>
     <script src="./script/components/Binar.js"></script>
     <script src="./script/components/Car.js"></script>
-    <script src="./script/components/App.js"></script>
+    <script src="./script/components/SearchCarApp.js"></script>
     <script src="./script/components/DropdownInput.js"></script>
 
     <script src="./script/cari-mobil.js"></script>

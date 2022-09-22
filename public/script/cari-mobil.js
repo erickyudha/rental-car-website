@@ -32,3 +32,6 @@ pickupTimeInput.render();
 pickupTimeInput.init();
 
 initTextInput();
+
+const searchCarApp = new SearchCarApp();
+searchCarApp.init();

@@ -1,0 +1,118 @@
+class SearchCarApp {
+    constructor() {
+        this.loadButton = document.getElementById("search-car-btn");
+        this.carContainerElement = document.getElementById("search-result");
+
+        this.selectDriverLabel = document.querySelector(`#driver-type-input .select-input > button > span`);
+        this.selectPickupDateLabel
+        this.selectPickupTimeLabel = document.querySelector(`#pickup-time-input .select-input > button > span`);
+
+        this.selectedDriverTypeSelector = 'input[name="driverType"]:checked' // NO INPUT VALUE == NULL
+        this.selectedPickupTimeSelector = 'input[name="pickupTime"]:checked' // NO INPUT VALUE == NULL
+
+        this.inputPickupDate = document.querySelector('input[name="pickupDate"]'); // NO INPUT VALUE, .value == ""
+        this.inputPeopleAmount = document.querySelector('input[name="peopleAmount"]'); // NO INPUT VALUE, .value == ""
+
+        this.calendarApplyBtn = document.querySelector('.applyBtn');
+    }
+
+    async init() {
+        this.loadButton.disabled = true;
+        await this.load();
+
+        // Register click listener
+        this.loadButton.onclick = this.run;
+
+        // FORM VALIDATIONS
+        const radioLabel = [
+            this.selectDriverLabel,
+            this.selectPickupTimeLabel
+        ]
+
+        const textInput = [
+            this.inputPickupDate,
+            this.inputPeopleAmount
+        ]
+
+        const toggleSearchBtn = () => {
+            this.loadButton.disabled = !this.checkInput();
+        }
+
+        radioLabel.forEach(element => {
+            // identify an element to observe
+            const elementToObserve = element;
+
+            // create a new instance of 'MutationObserver' named 'observer', 
+            // passing it a callback function
+            const observer = new MutationObserver(function (mutationsList, observer) {
+                toggleSearchBtn()
+            });
+
+            // call 'observe' on that MutationObserver instance, 
+            // passing it the element to observe, and the options object
+            observer.observe(elementToObserve, { characterData: false, childList: true, attributes: true });
+        })
+
+        textInput.forEach(element => {
+            element.addEventListener("change", toggleSearchBtn)
+        })
+
+        this.calendarApplyBtn.addEventListener("click", () => {
+            setTimeout(() => {
+                toggleSearchBtn()
+            }, 120);
+        })
+    }
+
+    checkInput = () => {
+        const currentDriverType = document.querySelector(this.selectedDriverTypeSelector);
+        const currentPickupTime = document.querySelector(this.selectedPickupTimeSelector);
+
+        let isValid = true;
+
+        if (currentDriverType === null) isValid = false;
+        console.log("DriverType > " + currentDriverType);
+        if (currentPickupTime === null) isValid = false;
+        console.log("PickupTime > " + currentPickupTime);
+        if (this.inputPickupDate.value === "") isValid = false;
+        console.log("PickupDate > " + this.inputPickupDate.value);
+
+        /* OPTIONAL CONDITION
+        if (this.inputPeopleAmount.value == "") isValid = false
+        */
+        function isNumeric(str) {
+            if (typeof str != "string") return false // we only process strings!  
+            return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+                !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+        }
+        if (this.inputPeopleAmount.value !== "" && !isNumeric(this.inputPeopleAmount.value)) isValid = false;
+        console.log("PeopleAmount > " + this.inputPeopleAmount.value);
+        return isValid
+    }
+
+
+    run = () => {
+        this.clear();
+
+        Car.list.forEach((car) => {
+            const node = document.createElement("div");
+            node.innerHTML = car.render();
+            this.carContainerElement.appendChild(node);
+        });
+    };
+
+    async load() {
+        const cars = await Binar.listCars();
+        Car.init(cars);
+        console.log(cars);
+    }
+
+    clear = () => {
+        let child = this.carContainerElement.firstElementChild;
+
+        while (child) {
+            child.remove();
+            child = this.carContainerElement.firstElementChild;
+        }
+    };
+}
