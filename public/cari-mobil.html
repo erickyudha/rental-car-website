@@ -83,39 +83,13 @@
     </section>
 
     <!-- INPUT OVERLAY -->
-    <span class="overlay"></span>
+    <span id="form-overlay" class="overlay"></span>
 
     <!-- SEARCH SECTION -->
     <section id="search">
       <!-- INPUT SECTION -->
       <form id="car-form">
-        <div class="select-input">
-          <label for="">Tipe Driver</label>
-          <button type="button" class="select-btn input-container">
-            <span>Pilih Tipe Driver</span>
-            <img src="/img/form-arrow-down.svg" alt="" height="18" width="18" />
-          </button>
-          <ul class="select-dropdown">
-            <li>
-              <input
-                type="radio"
-                name="driverType"
-                id="withDriver"
-                value="withDriver"
-              />
-              <label for="withDriver">Dengan Sopir</label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="driverType"
-                id="noDriver"
-                value="noDriver"
-              />
-              <label for="noDriver">Tanpa Sopir (Lepas Kunci)</label>
-            </li>
-          </ul>
-        </div>
+        <div id="driver-type-input"></div>
 
         <div class="date-input">
           <label for="pickupDate">Tanggal</label>
@@ -131,40 +105,7 @@
           </div>
         </div>
 
-        <div class="select-input">
-          <label for="">Waktu Jemput/Ambil</label>
-          <button type="button" class="select-btn input-container">
-            <span>Pilih Waktu</span>
-            <img src="/img/form-arrow-down.svg" alt="" height="18" width="18" />
-          </button>
-          <ul class="select-dropdown pickup-time-list">
-            <li>
-              <input type="radio" name="pickupTime" value="08.00" />
-              <label>08.00</label>
-              <span>WIB</span>
-            </li>
-            <li>
-              <input type="radio" name="pickupTime" value="09.00" />
-              <label>09.00</label>
-              <span>WIB</span>
-            </li>
-            <li>
-              <input type="radio" name="pickupTime" value="10.00" />
-              <label>10.00</label>
-              <span>WIB</span>
-            </li>
-            <li>
-              <input type="radio" name="pickupTime" value="11.00" />
-              <label>11.00</label>
-              <span>WIB</span>
-            </li>
-            <li>
-              <input type="radio" name="pickupTime" value="12.00" />
-              <label>12.00</label>
-              <span>WIB</span>
-            </li>
-          </ul>
-        </div>
+        <div id="pickup-time-input"></div>
 
         <div class="text-input">
           <label for="">Jumlah Penumpang (optional)</label>
@@ -270,13 +211,14 @@
     <script src="/lib/daterangepicker/moment.min.js"></script>
     <script src="/lib/daterangepicker/daterangepicker.js"></script>
 
-    <script src="./script/Component.js"></script>
     <script src="./script/form-component.js"></script>
     <script src="./script/date-picker.js"></script>
 
-    <script src="./script/Binar.js"></script>
-    <script src="./script/Car.js"></script>
-    <script src="./script/App.js"></script>
+    <script src="./script/components/Component.js"></script>
+    <script src="./script/components/Binar.js"></script>
+    <script src="./script/components/Car.js"></script>
+    <script src="./script/components/App.js"></script>
+    <script src="./script/components/DropdownInput.js"></script>
 
     <script src="./script/cari-mobil.js"></script>
   </body>
