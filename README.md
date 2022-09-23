@@ -1,6 +1,6 @@
 # rental-car-website
 
-Website rental mobil berbasis sebagai challenge dalam fullstack web develompent course Binar Academy.
+Website rental mobil dengan server Node.js sebagai challenge dalam fullstack web develompent course Binar Academy.
 
 # Figma Design
 
