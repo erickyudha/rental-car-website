@@ -2,6 +2,36 @@
 
 Website rental mobil dengan server Node.js sebagai challenge dalam fullstack web develompent course Binar Academy. Website memiliki aplikasi dengan fungsi search mobil sesuai fungsi filter dengan mengolah data mobil yang telah disediakan oleh Binar Academy.
 
+# Notes untuk Penilaian
+
+**Lokasi File Penting:**  
+
+Binar.js, Car.js, App.js *(App.js memiliki nama SearchCarApp.js)*
+
+    public/script/components
+    
+Server  
+
+    server/index.js  
+    
+Kelas abstract Component dan turunannya DropdownInput  
+
+    public/script/components
+
+# Run Aplikasi
+
+    npm start
+    
+# Rute Aplikasi
+
+Landing Page
+
+    http://localhost:8000/
+    
+Search Car Page
+
+    http://localhost:8000/cars
+
 # Figma Design
 
 https://www.figma.com/file/vpEJOzXUNdQn7pSQEwfXhs/BCR---Binar-Car-Rental-(Copy)?node-id=2%3A703
