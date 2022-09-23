@@ -18,7 +18,6 @@ class SearchCarApp {
 
     async init() {
         this.loadButton.disabled = true;
-        await this.load();
 
         // Register click listener
         this.loadButton.onclick = this.run;
@@ -91,11 +90,18 @@ class SearchCarApp {
         this.clear();
         await this.load();
 
-        Car.list.forEach((car) => {
-            const node = document.createElement("div");
-            node.innerHTML = car.render();
+        if (Car.list.length < 1) {
+            const node = document.createElement("span");
+            node.classList.add("no-result-text");
+            node.innerHTML = "No Car Found...";
             this.carContainerElement.appendChild(node);
-        });
+        } else {
+            Car.list.forEach((car) => {
+                const node = document.createElement("div");
+                node.innerHTML = car.render();
+                this.carContainerElement.appendChild(node);
+            });
+        }
     };
 
     async load() {

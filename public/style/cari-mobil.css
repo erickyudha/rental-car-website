@@ -65,6 +65,11 @@ nav {
   height: 200px;
 }
 
+.no-result-text {
+  font-size: 20px;
+  color: rgb(86, 86, 86);
+}
+
 .car-data {
   margin-bottom: 8px;
 }
