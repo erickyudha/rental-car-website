@@ -53,6 +53,7 @@
   visibility: visible;
   opacity: 1;
   transition: 0.1s ease-in;
+  z-index: 6;
 }
 .select-dropdown > li {
   min-height: 38px;
